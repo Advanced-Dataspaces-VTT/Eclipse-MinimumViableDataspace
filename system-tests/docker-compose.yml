@@ -1,6 +1,7 @@
 services:
 
   # EDC Connector to simulate a dataspace participant acting as a data provider which is located in EU.
+  # decrease the output logs from the services on the console EDC_CATALOG_CACHE_EXECUTION_PERIOD_SECONDS 
   company1:
     container_name: company1
     build:
@@ -21,7 +22,7 @@ services:
       EDC_API_AUTH_KEY: ApiKeyDefaultValue
       EDC_IAM_DID_WEB_USE_HTTPS: "false"
       EDC_CATALOG_CACHE_EXECUTION_DELAY_SECONDS: 5
-      EDC_CATALOG_CACHE_EXECUTION_PERIOD_SECONDS: 5
+      EDC_CATALOG_CACHE_EXECUTION_PERIOD_SECONDS: 65
       EDC_CATALOG_CACHE_PARTITION_NUM_CRAWLERS: 5
       EDC_DATAPLANE_TOKEN_VALIDATION_ENDPOINT: http://company1:8383/api/control/token
       REGISTRATION_SERVICE_API_URL: http://registration-service:8184/api/authority
