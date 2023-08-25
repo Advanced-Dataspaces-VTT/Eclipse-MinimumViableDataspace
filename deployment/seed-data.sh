@@ -2,11 +2,11 @@
 
 set -euxo pipefail
 
-# Split env vars into an array using delimiter ':'
+# Split env vars into an array using delimiter ';'
 
-ParticipantIdArray=(${PARTICIPANT_ID//:/ })
-AssetsStorageAccountArray=(${ASSETS_STORAGE_ACCOUNT//:/ })
-EdcHostArray=(${EDC_HOST//:/ })
+ParticipantIdArray=(${PARTICIPANT_ID//;/ })
+AssetsStorageAccountArray=(${ASSETS_STORAGE_ACCOUNT//;/ })
+EdcHostArray=(${EDC_HOST//;/ })
 
 if [ ${#ParticipantIdArray[@]} -ne ${#AssetsStorageAccountArray[@]} ] || [ ${#AssetsStorageAccountArray[@]} -ne ${#EdcHostArray[@]} ]; then
   echo "PARTICIPANT_ID,ASSETS_STORAGE_ACCOUNT and EDC_HOST must be of equal length"

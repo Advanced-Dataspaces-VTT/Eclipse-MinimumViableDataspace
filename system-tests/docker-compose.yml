@@ -52,9 +52,9 @@ services:
     working_dir: /
     environment:
       API_KEY: ApiKeyDefaultValue
-      EDC_HOST: company1
-      ASSETS_STORAGE_ACCOUNT: company1assets
-      PARTICIPANT_ID: company1
+      EDC_HOST: company1;
+      ASSETS_STORAGE_ACCOUNT: company1assets;
+      PARTICIPANT_ID: company1;
     depends_on:
       company1:
         condition: service_healthy
