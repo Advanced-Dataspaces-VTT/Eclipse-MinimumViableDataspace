@@ -9,7 +9,7 @@ function registerParticipant() {
 
   echo "Registering $participantName"
   java -jar registration-service-cli.jar \
-              -d="did:web:did-server:registration-service" \
+              -d="did:web:did-server:registration-service2" \
               --http-scheme \
               -k=/resources/vault/$participantName/private-key.pem \
               -c="$participantDid" \
@@ -52,7 +52,7 @@ function awaitParticipantRegistration() {
   local participantDid="did:web:did-server:$participantName"
 
   cmd="java -jar registration-service-cli.jar \
-                  -d=did:web:did-server:registration-service \
+                  -d=did:web:did-server:registration-service2 \
                   --http-scheme \
                   -k=/resources/vault/$participantName/private-key.pem \
                   -c=$participantDid \
