@@ -10,7 +10,7 @@ services:
         JVM_ARGS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5006"
     environment:
       EDC_DSP_CALLBACK_ADDRESS: http://company2:8282/api/dsp
-      EDC_CONNECTOR_NAME: company1
+      EDC_CONNECTOR_NAME: company2
       EDC_PARTICIPANT_ID: did:web:did-server:company2
 
       EDC_BLOBSTORE_ENDPOINT_TEMPLATE: "http://azurite2:10000/%s"
@@ -88,7 +88,7 @@ services:
     environment:
       JWT_AUDIENCE: http://registration-service2:8184/api/authority
       EDC_IAM_DID_WEB_USE_HTTPS: "false"
-      EDC_CONNECTOR_NAME: registration-service
+      EDC_CONNECTOR_NAME: registration-service2
       EDC_IDENTITY_DID_URL: did:web:did-server:registration-service2
       EDC_SELF_DESCRIPTION_DOCUMENT_PATH: /resources/self-description/registration-service/sdd.json
       EDC_VAULT: /resources/vault/registration-service/registration-service-vault.properties
@@ -125,7 +125,7 @@ services:
     volumes:
       - ./resources/appconfig/company2:/usr/share/nginx/html/assets/config
     depends_on:
-      company1:
+      company2:
         condition: service_healthy
     ports:
       - "17080:80"

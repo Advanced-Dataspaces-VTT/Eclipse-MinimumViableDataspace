@@ -10,12 +10,12 @@
     {
       "id": "#registration-url",
       "type": "RegistrationUrl",
-      "serviceEndpoint": "http://registration-service:8184/api/authority"
+      "serviceEndpoint": "http://registration-service2:8184/api/authority"
     },
     {
       "id": "#self-description-url",
       "type": "SelfDescription",
-      "serviceEndpoint": "http://registration-service:7171/api/identity/identity-hub/self-description"
+      "serviceEndpoint": "http://registration-service2:7171/api/identity/identity-hub/self-description"
     }
   ],
   "verificationMethod": [
