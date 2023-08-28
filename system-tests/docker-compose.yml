@@ -117,7 +117,7 @@ services:
       registration-service2:
         condition: service_healthy
 
-  # Data Dashboard (MVD UI) for participant company1
+  # Data Dashboard (MVD UI) for participant company2
   company2-datadashboard:
     container_name: company2-datadashboard
     build:
