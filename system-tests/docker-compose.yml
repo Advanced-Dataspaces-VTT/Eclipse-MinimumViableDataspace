@@ -39,8 +39,8 @@ services:
     volumes:
       - ./resources:/resources
 
-
   # Usages postman collections for initial data seeding to connectors.
+  # EDC_HOST, ASSETS_STORAGE_ACCOUNT and PARTICIPANT_ID values can be a list separated by semi-colon;
   newman:
     container_name: newman
     image: postman/newman:ubuntu
@@ -51,9 +51,9 @@ services:
     working_dir: /
     environment:
       API_KEY: ApiKeyDefaultValue
-      EDC_HOST: company1
-      ASSETS_STORAGE_ACCOUNT: company1assets
-      PARTICIPANT_ID: company1
+      EDC_HOST: company1;
+      ASSETS_STORAGE_ACCOUNT: company1assets;
+      PARTICIPANT_ID: company1;
     depends_on:
       company1:
         condition: service_healthy
@@ -129,3 +129,4 @@ services:
     ports:
       - "7080:80"
     profiles: ["ui"]
+
