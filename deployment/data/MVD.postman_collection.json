@@ -329,7 +329,7 @@
   "variable": [
     {
       "key": "data_management_url",
-      "value": "http://localhost:9191/api/management",
+      "value": "http://localhost:19191/api/management",
       "type": "string"
     }
   ]
